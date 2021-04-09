@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "name": "win32",
+            "includePath": [
+                ".\\src\\PROJ",
+                ".\\src\\MAIN",
+                ".\\src\\FWLIB\\inc",
+                ".\\src\\FWLIB\\src",
+                ".\\src\\USERLIB\\Src",
+                ".\\src\\USERLIB\\Inc",
+                ".\\src\\STARTUP",
+                ".\\src\\USERLIB\\inc",
+                ".\\src\\USERLIB\\src",
+                ".\\src\\USERLIB",
+                ".\\src",
+                "D:\\Maker\\keil5\\ARM\\ARMCLANG\\include"
+            ],
+            "defines": [
+                "STM32F103x8",
+                "USE_STDPERIPH_DRIVER",
+                "__CC_ARM",
+                "__forceinline=",
+                "__inline=",
+                "__asm(x)=",
+                "__declspec(x)=",
+                "__attribute__(x)=",
+                "__nonnull__(x)=",
+                "__int64=int",
+                "__irq=",
+                "__swi=",
+                "__weak=",
+                "__register=",
+                "__pure=",
+                "__value_in_regs="
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

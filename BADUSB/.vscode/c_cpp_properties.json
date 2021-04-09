@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Proj",
+            "includePath": [
+                ".\\Public",
+                ".\\USB\\Device",
+                ".\\**"
+            ],
+            "defines": [
+                "STM32F10X_HD",
+                "USE_STDPERIPH_DRIVER",
+                "USE_FULL_ASSERT"
+            ],
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}

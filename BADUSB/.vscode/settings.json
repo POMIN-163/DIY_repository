@@ -1,0 +1,21 @@
+{
+     "files.exclude": {
+        "**/Objects": true,
+        "**/Listings": true,
+        "**/Obj": true,
+        "**/List": true,
+        "**/OBJ": true,
+        "**/Build": true,
+        "**/Keil": true,
+        "**/*.code-workspace": true
+    },
+    "files.encoding": "gb2312",
+    "editor.fontFamily": "Consolas, OPPOSans",
+    "files.associations": {
+        "DEBUG.C": "cpp",
+        "scheduler.h": "c",
+        "ch554.h": "c",
+        "key.h": "c",
+        "Key.C": "cpp"
+    },
+}

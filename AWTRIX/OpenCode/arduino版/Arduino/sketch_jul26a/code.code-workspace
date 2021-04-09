@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/Objects": true,
+            "**/Listings": true,
+            "**/*.bat": true
+        },
+        "files.encoding": "gb2312",
+        "editor.fontFamily": "Consolas, OPPOSans",
+    }
+}

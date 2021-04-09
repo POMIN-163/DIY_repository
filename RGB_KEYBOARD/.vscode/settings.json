@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "Key.C": "c",
+        "DEBUG.C": "c",
+        "ws2812b.h": "c",
+        "key.h": "c"
+    }
+}
