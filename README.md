@@ -2,11 +2,11 @@
 <img src="https://avatars.githubusercontent.com/u/67187713?v=4" width="120" height="120"></img>
 
 # POMIN-163
-[AWTRIX：一个物联网时钟](./AWTRIX)
+- ### [AWTRIX：一个物联网时钟](./AWTRIX/readme.md)
 
-[BADUSB：一个带有恶意脚本的USB设备](./BADUSB)
+- ### [BADUSB：一个带有自动脚本的USB设备](./BADUSB/readme.md)
 
-[BLUETOOTH_CAR：简单的蓝牙遥控小车](./BLUETOOTH_CAR)
+- ### [DINO：DINO小游戏机](./BLUETOOTH_CAR/readme.md)
 
-[RGB_KEYBOARD：rgb多媒体键盘](RGB_KEYBOARD)
+- ### [RGB_KEYBOARD：rgb多媒体键盘](RGB_KEYBOARD/readme.md)
 

@@ -1,0 +1,13 @@
+{
+     "files.exclude": {
+        "**/Objects": true,
+        "**/Listings": true,
+        "**/Obj": true,
+        "**/List": true,
+        "**/OBJ": true,
+        "**/Build": true,
+        "**/*.code-workspace": true
+    },
+    "files.encoding": "utf8",
+    "editor.fontFamily": "Consolas, OPPOSans"
+}
