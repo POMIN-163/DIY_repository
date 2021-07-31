@@ -20,5 +20,5 @@
     <source id="mp4" src=".\\Picture\\成品视频.mp4" type="video/mp4">
 </video>
 
-ESP8266制作的像素时钟，来自于开源项目awtrix，awtrix项目地址：https://awtrixdocs.blueforcer.de/。
+ESP8266制作的像素时钟，来自于开源项目awtrix，awtrix项目地址: [https://awtrixdocs.blueforcer.de/](https://awtrixdocs.blueforcer.de/)。
 
