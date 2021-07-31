@@ -1,6 +1,6 @@
 # **CH552制作的 rgb 小键盘**
 ## 正面图
-![---](.\\Picture\\FrontView.png)
+<img src=".\\Picture\\FrontView.png"></img>
 
 ## 按键闪灯
 <video id="video" controls="" preload="none" height="600" width="800">

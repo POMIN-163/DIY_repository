@@ -1,18 +1,18 @@
 # **ESP8266制作的像素时钟-awtrix)**
 ## 界面图
 
-![---](.\\Picture\\Interface-1.jpg)
+<img src=".\\Picture\\Interface-1.jpg"></img>
 
-![---](.\\Picture\\Interface-2.jpg)
+<img src=".\\Picture\\Interface-2.jpg"></img>
 
-![---](.\\Picture\\Interface-3.jpg)
+<img src=".\\Picture\\Interface-3.jpg"></img>
 
-![---](.\\Picture\\Interface-4.jpg)
+<img src=".\\Picture\\Interface-4.jpg"></img>
 
 ## 效果图
-![---](.\\Picture\\FrontView.jpg)
+<img src=".\\Picture\\FrontView.jpg"></img>
 
-![---](.\\Picture\\Pack.jpg)
+<img src=".\\Picture\\Pack.jpg"></img>
 
 ## 成品视频
 
