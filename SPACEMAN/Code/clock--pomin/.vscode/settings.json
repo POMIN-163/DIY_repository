@@ -1,0 +1,28 @@
+{
+    "files.exclude": {
+        // 文件夹
+        "**/.settings": true,
+        "**/Debug": true,
+        "**/Objects": true,
+        "**/objects": true,
+        "**/Listings": true,
+        "**/listings": true,
+        "**/Output": true,
+        "**/output": true,
+        "**/Build": true,
+        "**/build": true,
+        // 文件
+        "**/*.code-workspace": true,
+        "**/*.map":true,
+        "**/Kconfig":true,
+        "**/.config*":true,
+        "**/.project*":true,
+        "**/.cproject*":true,
+        "**/*.POMIN":true,
+        ".gitignore":true,
+        ".gitattributes":true,
+    },
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "files.encoding": "utf8",
+    "editor.fontFamily": "Consolas, OPPOSans"
+}

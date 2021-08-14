@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "pomin",//任务的名字，就是刚才在命令面板中选择的时候所看到的，可以自己设置
+            "command": "D:\\Maker\\Studios\\arduino\\arduino_debug.exe",
+            "args": [//编译时候的参数
+                "--board",
+                // "arduino:avr:uno",               // arduino
+                "esp8266:esp8266:nodemcuv2",  // esp8266
+                // "esp32:esp32:nodemcu-32s",    // esp32
+                "--port",
+                "COM34",    // 端口号
+                "--upload",
+                "${file}",
+            ],
+            "options": {
+                "cwd": "D:\\Maker\\Studios\\arduino"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true//表示快捷键Ctrl+Shift+B可以运行该任务
+            }
+        }
+    ]
+}
