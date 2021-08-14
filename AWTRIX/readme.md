@@ -1,4 +1,4 @@
-# **ESP8266制作的像素时钟-awtrix)**
+# **ESP8266制作的像素时钟-awtrix**
 ## 界面图
 
 <img src=".\\Picture\\Interface-1.jpg"></img>
