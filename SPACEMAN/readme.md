@@ -2,11 +2,11 @@
 
 ## 龙猫
 
-<img src=".\\Picture\\longmao.png"></img>
+<img src=".\\Picture\\Longmao.png"></img>
 
 ## 太空人
 
-<img src=".\\Picture\\spaceman.png"></img>
+<img src=".\\Picture\\Spaceman.png"></img>
 
 ## 成品视频
 
