@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Code",
+            "includePath": [
+                "D:\\Maker\\Console\\mingw64\\x86_64-w64-mingw32\\include",
+                ".\\",
+                ".\\.vscode\\tools",
+                ".\\FWLIB\\inc",
+                ".\\FWLIB\\src",
+                ".\\USER\\Debug",
+                ".\\USER\\settings",
+                ".\\USERLIB\\inc",
+                ".\\USERLIB\\src",
+                ".\\.vscode",
+                ".\\FWLIB",
+                ".\\USER",
+                ".\\USERLIB",
+                ""
+            ],
+            "defines": [
+                "STM8L15X_MD",
+                ""
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "forcedInclude": [
+                ".\\.vscode\\mcu.h"
+            ]
+        }
+    ],
+    "version": 4
+}
