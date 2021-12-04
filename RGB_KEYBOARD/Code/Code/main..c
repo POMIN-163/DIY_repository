@@ -271,6 +271,7 @@ void Init(void)
 
     EC11_A = 1;
     EC11_B = 1;
+
     // 懒得写循环了, 就是表示这玩意上电了
     rgbOne(rgbColor);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);mDelaymS(800);
     rgbOne(_NULL_);rgbOne(rgbColor);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);mDelaymS(800);
@@ -280,6 +281,7 @@ void Init(void)
     rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(rgbColor);mDelaymS(800);
     rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);  mDelaymS(800);
     rgbColor[0] = rgbColor[1] = rgbColor[2] = 0;
+    CH554WDTModeSelect(1);
 }
 
 /*********************************************** 使用伪线程 ************************************************/
@@ -335,14 +337,21 @@ static void TASK_CYCLE_3(void) {
         rgbNum = 0x00;
     }
 }
-static void TASK_CYCLE_50(void) {
-    // ledTest = !ledTest;
+static void TASK_CYCLE_5(void) {
+//    static UINT16X timeout = 0;
+//    timeout++;
+      CH554WDTFeed(0);
+//    if(timeout > 1000) {
+//        SAFE_MOD = 0x55;
+//        SAFE_MOD = 0xAA;
+//        GLOBAL_CFG	|=bSW_RESET;
+//    }
 }
 static task_s systemTasks[] = {
     {TASK_CYCLE_1 , 1,  0},
     {TASK_CYCLE_2 , 2,  0},
     {TASK_CYCLE_3 , 3,  0},
-    {TASK_CYCLE_50, 50,  0},
+    {TASK_CYCLE_5 , 5,  0},
 };
 main(void) {
     UINT8X i;
