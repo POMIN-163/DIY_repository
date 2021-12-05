@@ -24,7 +24,7 @@ OBJ/
 Objects/
 Listings/
 DebugConfig/
-
+build/
 old/
 
 *.POMIN
