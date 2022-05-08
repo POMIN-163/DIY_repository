@@ -27,6 +27,7 @@ DebugConfig/
 build/
 old/
 
+*.log
 *.POMIN
 *.bak
 *.ddk

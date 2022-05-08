@@ -9,13 +9,17 @@
 
 - ### [OFFLINE_SPEECH：离线语音识别](./OFFLINE_SPEECH)
 
-- ### [RGB_KEYBOARD：rgb多媒体键盘](RGB_KEYBOARD)
+- ### [RGB_KEYBOARD：rgb多媒体键盘](./RGB_KEYBOARD)
 
-- ### [SPACEMAN: 带有太空人动画的气象站小电视](SPACEMAN)
+- ### [SPACEMAN: 带有太空人动画的气象站小电视](./SPACEMAN)
 
-- ### [ARM-LINKER: STM32核心板到DAP/ST-Link/Jlink的转接板](ARM-LINKER)
+- ### [ARM-LINKER: STM32核心板到DAP/ST-Link/Jlink的转接板](./ARM-LINKER)
 
-- ### [MODULE: DIY的一些电子小模块](MODULE)
+- ### [MODULE: DIY的一些电子小模块](./MODULE)
 
-- ### [CLONE: 复刻的一些开源小玩意](CLONE)
+- ### [CLONE: 复刻的一些开源小玩意](./CLONE)
+
+- ### [TOYS_PCB: 一些有意思的 PCB](./TOYS_PCB)
+
+
 
