@@ -7,6 +7,8 @@
 
 - ### [DINO：DINO小游戏机](./DINO)
 
+- ### [Heart_LED: 心形的 RGB 灯](./Heart_LED)
+
 - ### [OFFLINE_SPEECH：离线语音识别](./OFFLINE_SPEECH)
 
 - ### [RGB_KEYBOARD：rgb多媒体键盘](./RGB_KEYBOARD)

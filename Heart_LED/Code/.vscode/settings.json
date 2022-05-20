@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.o": "plist",
+        "Key.C": "c",
+        "DEBUG.C": "c",
+        "ws2812b.h": "c",
+        "key.h": "c",
+        "DEBUG.H": "cpp",
+        "ws2812.h": "c",
+        "hsv2rgb.h": "c",
+        "CH554.H": "cpp"
+    },
+    // "C_Cpp.intelliSenseEngine": "Disabled"
+}
