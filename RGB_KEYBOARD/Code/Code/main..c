@@ -28,19 +28,26 @@
 #define KEY_Right_Alt 0x40
 #define KEY_Right_GUI 0x80
 
+// ------- HIDKeyMUL[0] -------- //
 #define KEY_MUL_VOL_DOWN 0x01  // 音量减
-#define KEY_MUL_VOL_UP 0x02    // 音量加
+#define KEY_MUL_VOL_UP   0x02  // 音量加
 #define KEY_MUL_VOL_ZERO 0x04  // 静音
-
-#define KEY_MUL_MEDIA 0x10     // 打开媒体播放器
-#define KEY_MUL_BROWSER 0x20   // 打开浏览器
-#define KEY_MUL_PAUSE 0x40     // 暂停
+#define KEY_MUL_EMAIL    0x08  // 打开邮件
+#define KEY_MUL_MEDIA    0x10  // 打开媒体播放器
+#define KEY_MUL_BROWSER  0x20  // 打开浏览器
+#define KEY_MUL_PAUSE    0x40  // 暂停/播放
+#define KEY_MUL_STOP     0x80  // 停止
+// ------- HIDKeyMUL[1] -------- //
+#define KEY_MUL_PRE      0x01  /* 0x00 */ // 上一曲
+#define KEY_MUL_NEXT     0x02  /* 0x00 */ // 下一曲
+#define KEY_MUL_LGT_ADD  0x04  /* 0x00 */ // 亮度增加
+#define KEY_MUL_LGH_SUB  0x08  /* 0x00 */ // 亮度减少
 
 #define KEY_SYS_POWEROFF 0x81  // 关机
 #define KEY_SYS_REST 0x82      // 休眠
 #define KEY_SYS_WAKE 0x83      // 唤醒
 
-#define _NULL_ ((void *)0)     // 空指针
+#define _NULL_ ((void *)0)       // 空指针
 #define T0RH (UINT8X)(45535 >> 8)// T0高8位重载值 (10ms)
 #define T0RL (UINT8X) 45535      // T0低8位重载值
 
@@ -138,17 +145,17 @@ void KeyAction(unsigned char keyCode)
 {
     switch(Key_msg) {
     case 1:
-        HIDKeyMUL[0] = 0x80;              //上一曲
+        HIDKeyMUL[1] = KEY_MUL_PRE;       //上一曲
         if(Ready) HIDValueHandleMul();
         else USBDeviceInit();
         break;
     case 2:
-        HIDKeyMUL[0] = 0x40;              //播放/暂停
+        HIDKeyMUL[0] = KEY_MUL_PAUSE;     //播放/暂停
         if(Ready) HIDValueHandleMul();
         else USBDeviceInit();
         break;
     case 3:
-        HIDKeyMUL[1] = 0x01;              //下一曲
+        HIDKeyMUL[1] = KEY_MUL_NEXT;      //下一曲
         if(Ready) HIDValueHandleMul();
         else USBDeviceInit();
         break;
