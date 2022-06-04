@@ -6,7 +6,7 @@ HID报告描述符参考文章：https://www.cnblogs.com/AlwaysOnLines/p/4552840.html
 以下很多都是复制大佬的程序，加了些自己的理解注释
 *******************************************************************************/
 
-#include "./Public/CH554.H"
+#include "./Public/CH552.H"
 #include "./Public/DEBUG.H"
 #include "key.h"
 #include <string.h>
@@ -90,9 +90,9 @@ BYTE4 --
         0x0A, 0x83, 0x01,		/* Usage( Media ) */
         0x0A, 0x23, 0x02,		/* Usage( WWW Home ) */
         0x0A, 0xCD, 0x00,		/* Usage( Play/Pause ) */
+        0x0A, 0xB7, 0x00,		/* Usage( Stop ) */
         0x0A, 0xB6, 0x00,		/* Usage( Scan Pre Track ) */
         0x0A, 0xB5, 0x00,		/* Usage( Scan Next Track ) */
-        0x0A, 0xB7, 0x00,		/* Usage( Stop ) */
         0x0A, 0x6F, 0x00,		/* Usage( light+ ) */
         0x0A, 0x70, 0x00,		/* Usage( light- ) */
         0x0A, 0x00, 0x00,		/* Usage( NULL ) */
@@ -504,8 +504,7 @@ void DeviceInterrupt(void) interrupt INT_NO_USB using 1                        /
     }
 }
 /**键盘HID值上传函数**/
-void HIDValueHandle()
-{
+void HIDValueHandle() {
     TR0 = 0;                     // 发送前关定时器中断
     FLAG = 0;                    // 清空USB中断传输完成标志，准备发送按键按下数据
     Enp1IntIn();                 // USB设备模式端点1的中断上传
@@ -517,8 +516,7 @@ void HIDValueHandle()
     TR0 = 1;                     // 发送完打开定时器中断
 }
 /**多媒体按键HID值上传函数**/
-void HIDValueHandleMul()
-{
+void HIDValueHandleMul() {
     TR0 = 0;                     // 发送前关定时器中断
     FLAG = 0;                    // 清空USB中断传输完成标志，准备发送按键按下数据
     Enp2IntIn();                 // USB设备模式端点2的中断上传

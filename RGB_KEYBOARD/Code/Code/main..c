@@ -11,10 +11,11 @@
  *         知识可以看 key.c 里面原作者的注解, 不再赘述, 主要是我看不懂 *__*, EC
  *         16 没用过, 就没写, 应该和 EC11 差不多.....吧。
  ***************************************************/
-#include "./Public/CH554.H"
+#include "./Public/CH552.H"
 #include "./Public/DEBUG.H"
 #include "WS2812B.h"
 #include "key.h"
+
 #define HID_KEY_CTRL HIDKey[0]    // Ctrl Shift Alt 三个键
 #define HID_KEY_MAIN HIDKey[2]    // 主键盘
 #define HID_KEY_SYS HIDKeyMUL[3]  // 系统功能按键
@@ -28,6 +29,7 @@
 #define KEY_Right_Alt 0x40
 #define KEY_Right_GUI 0x80
 
+/* 自定义按键 ( 需和 key.c 内一致 ) */
 // ------- HIDKeyMUL[0] -------- //
 #define KEY_MUL_VOL_DOWN 0x01  // 音量减
 #define KEY_MUL_VOL_UP   0x02  // 音量加
@@ -43,9 +45,10 @@
 #define KEY_MUL_LGT_ADD  0x04  /* 0x00 */ // 亮度增加
 #define KEY_MUL_LGH_SUB  0x08  /* 0x00 */ // 亮度减少
 
+/* 非自定义按键 */
 #define KEY_SYS_POWEROFF 0x81  // 关机
-#define KEY_SYS_REST 0x82      // 休眠
-#define KEY_SYS_WAKE 0x83      // 唤醒
+#define KEY_SYS_REST     0x82  // 休眠
+#define KEY_SYS_WAKE     0x83  // 唤醒
 
 #define _NULL_ ((void *)0)       // 空指针
 #define T0RH (UINT8X)(45535 >> 8)// T0高8位重载值 (10ms)
@@ -69,18 +72,16 @@ sbit key6 = P1 ^ 1;
 sbit key7 = P3 ^ 3;   // EC11_D
 sbit EC11_A = P3 ^ 1;
 sbit EC11_B = P3 ^ 0; // EC11的A、B脚
-
 sbit ledTest = P3 ^ 3;// 测试用LED
 
-UINT8X KeyState[8] = {1,1,1,1,1,1,1,1};    // 按键状态
-UINT8X BackState[8] = {1,1,1,1,1,1,1,1};   // 按键上一次的状态
-UINT8X Key_msg = 0;                        // 按键消息
-
-UINT8X rgbColor[3] = {0,0,200};             // 三色值
-UINT8X rgbStep[3] = {2,2,2};               // 三色步进值
-UINT8X rgbResult[3] = {0,0,0};             // 三色目标值
-UINT8X rgbNum = 0;                         // 亮灯按键序号
-UINT8X rgbCnt = 0;                         // 亮灯颜色选择
+UINT8X KeyState[8]  = { 1, 1, 1, 1, 1, 1, 1, 1}; // 按键状态
+UINT8X BackState[8] = { 1, 1, 1, 1, 1, 1, 1, 1}; // 按键上一次的状态
+UINT8X Key_msg = 0;                  // 按键消息
+UINT8X rgbColor[3]  = { 0, 0, 200 }; // 三色值
+UINT8X rgbStep[3]   = { 2, 2, 2 };   // 三色步进值
+UINT8X rgbResult[3] = { 0, 0, 0 };   // 三色目标值
+UINT8X rgbNum = 0;                   // 亮灯按键序号
+UINT8X rgbCnt = 0;                   // 亮灯颜色选择
 
 void Init(void);
 void KeyScan(void);
@@ -92,18 +93,18 @@ void rgbOne(UINT8X *RGB); // 亮一个
 void rgbSet(UINT8X *RGB); // 亮指定的
 
 /**T0配置函数**/
-void ConfigT0(void)
-{
-    TMOD = ( TMOD & ~( bT0_GATE | bT0_CT | bT0_M1 ) ) | bT0_M0;//* 模式1，16 位定时/计数器
-    TH0 = T0RH;
-    TL0 = T0RL;
-    TF0 = 0;
-    ET0 = 1;
-    TR0 = 1;
-}
+// void ConfigT0(void) {
+//     TMOD = ( TMOD & ~( bT0_GATE | bT0_CT | bT0_M1 ) ) | bT0_M0;
+//     // 模式1，16 位定时/计数器
+//     TH0 = T0RH;
+//     TL0 = T0RL;
+//     TF0 = 0;
+//     ET0 = 1;
+//     TR0 = 1;
+// }
+
 /**按键扫描函数**/
-void KeyScan(void)
-{
+void KeyScan(void) {
     // 0 - 5 是六个按键, 6是 EC11 按键(D脚), 7是 EC11_B 脚
     UINT8X i;
     BackState[7] = KeyState[7];
@@ -130,6 +131,7 @@ void KeyScan(void)
     if( Key_msg > 0 && Key_msg < 7)
         rgbNum = Key_msg;  // 准备亮灯
 }
+
 /*
     普通按键
     例如ctrl + c :
@@ -140,9 +142,9 @@ void KeyScan(void)
         HIDValueHandle1();
     }
 */
+
 /* 按键动作函数 */
-void KeyAction(unsigned char keyCode)
-{
+void KeyAction(unsigned char keyCode) {
     switch(Key_msg) {
     case 1:
         HIDKeyMUL[1] = KEY_MUL_PRE;       //上一曲
@@ -193,6 +195,7 @@ void KeyAction(unsigned char keyCode)
         break;
     }
 }
+
 // 实际上 WS2812 是绿、红、蓝的次序也就是 GRB, 并非 RGB
 void rgbOne(UINT8X *RGB) {
     UINT8X k,byte;
@@ -238,6 +241,7 @@ void rgbOne(UINT8X *RGB) {
         }
     }
 }
+
 void rgbSet(UINT8X *RGB) {
     UINT8X i;
     for ( i = 0; i < 6; i++) {
@@ -256,9 +260,10 @@ void rgbOff(void) {
 }
 void Init(void)
 {
+    UINT8X i;
     CfgFsys();          // CH552时钟选择24M配置
-    mDelaymS(1000);     // 修改主频等待内部晶振稳定,必加
-    ConfigT0();         // 配置1ms T0中断
+    mDelaymS(100);      // 修改主频等待内部晶振稳定,必加
+    // ConfigT0();         // 配置1ms T0中断
     USBDeviceInit();    // USB设备模式初始化
     EA = 1;             // 允许单片机中断
     UEP1_T_LEN = 0;     // 预使用发送长度一定要清空
@@ -279,15 +284,14 @@ void Init(void)
     EC11_A = 1;
     EC11_B = 1;
 
-    // 懒得写循环了, 就是表示这玩意上电了
-    rgbOne(rgbColor);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);mDelaymS(800);
-    rgbOne(_NULL_);rgbOne(rgbColor);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);mDelaymS(800);
-    rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(rgbColor);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);mDelaymS(800);
-    rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(rgbColor);rgbOne(_NULL_);rgbOne(_NULL_);mDelaymS(800);
-    rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(rgbColor);rgbOne(_NULL_);mDelaymS(800);
-    rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(rgbColor);mDelaymS(800);
-    rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);rgbOne(_NULL_);  mDelaymS(800);
+    for (i = 0; i < 6; i++) {
+        rgbNum = i + 1;
+        rgbSet(rgbColor);
+        mDelaymS(80);
+    }
+
     rgbColor[0] = rgbColor[1] = rgbColor[2] = 0;
+    rgbOff();
     CH554WDTModeSelect(1);
 }
 
@@ -322,6 +326,7 @@ static void TASK_CYCLE_1(void) {
         scheduler_run[1] = 1;            // 启动渐增
     }
 }
+
 static void TASK_CYCLE_2(void) {
     rgbColor[0] += rgbStep[0];
     rgbColor[1] += rgbStep[1];
@@ -332,6 +337,7 @@ static void TASK_CYCLE_2(void) {
         scheduler_run[2] = 1;       // 启动渐灭
     }
 }
+
 static void TASK_CYCLE_3(void) {
     if(rgbColor[0]) rgbColor[0] -= rgbStep[0];
     if(rgbColor[1]) rgbColor[1] -= rgbStep[1];
@@ -344,6 +350,7 @@ static void TASK_CYCLE_3(void) {
         rgbNum = 0x00;
     }
 }
+
 static void TASK_CYCLE_5(void) {
 //    static UINT16X timeout = 0;
 //    timeout++;
@@ -354,16 +361,31 @@ static void TASK_CYCLE_5(void) {
 //        GLOBAL_CFG	|=bSW_RESET;
 //    }
 }
+
 static task_s systemTasks[] = {
     {TASK_CYCLE_1 , 1,  0},
     {TASK_CYCLE_2 , 2,  0},
     {TASK_CYCLE_3 , 3,  0},
     {TASK_CYCLE_5 , 5,  0},
 };
-main(void) {
+
+void main(void) {
     UINT8X i;
     Init();
     while (1) {
+        mDelaymS(10);
+        systime_ms++;
+        if(systime_ms > 4000) {
+            systime_ms = 0;
+            if(!Ready) USBDeviceInit();
+            for(scheduler_index = 0; scheduler_index < task_num; scheduler_index++) {
+                systemTasks[scheduler_index].last_run = 0;
+            }
+            scheduler_run[0] = 1;
+            scheduler_run[1] = 0;
+            scheduler_run[2] = 0;
+            scheduler_run[3] = 1;
+        }
         KeyScan(); //按键扫描
         for(scheduler_index = 0; scheduler_index < task_num; scheduler_index++) {
             if(scheduler_run[scheduler_index]) {
@@ -378,21 +400,9 @@ main(void) {
         }
     }
 }
-/**T0中断函数 (提供心跳)**/
-void InterruptTimer0() interrupt INT_NO_TMR0 using 1
-{
-    systime_ms++;
-    if(systime_ms > 4000) {
-        systime_ms = 0;
-        if(!Ready) USBDeviceInit();
-        for(scheduler_index = 0; scheduler_index < task_num; scheduler_index++) {
-            systemTasks[scheduler_index].last_run = 0;
-        }
-        scheduler_run[0] = 1;
-        scheduler_run[1] = 0;
-        scheduler_run[2] = 0;
-        scheduler_run[3] = 1;
-    }
-    TH0 = T0RH;
-    TL0 = T0RL;
-}
+// /**T0中断函数 (提供心跳)**/
+// void InterruptTimer0() interrupt INT_NO_TMR0 using 1
+// {
+//     TH0 = T0RH;
+//     TL0 = T0RL;
+// }
