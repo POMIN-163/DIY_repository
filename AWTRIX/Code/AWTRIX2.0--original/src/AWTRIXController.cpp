@@ -65,7 +65,7 @@ bool MatrixType2 = false;
 int matrixTempCorrection = 0;
 
 String version = "0.37";
-char awtrix_server[16] = "121.4.17.169";// "8.140.170.202";  //"160.119.66.71";
+char awtrix_server[16] = "tools.pomin.top";// "8.140.170.202";  //"160.119.66.71";
 char Port[6] = "7001"; // AWTRIX Host Port, default = 7001
 IPAddress Server ;
 WiFiClient espClient;
