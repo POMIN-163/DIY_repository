@@ -1,0 +1,8 @@
+[ProjectGroup]
+Version=1.0
+[Project1]
+ProjectPath=export\sensor.PrjPcb
+[Project2]
+ProjectPath=7¡®LCD\7¡®LCD.PrjPcb
+[Project3]
+ProjectPath=fpc\fpc.PrjPcb
