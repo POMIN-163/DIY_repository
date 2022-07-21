@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "name": "Code",
+            "includePath": [
+                "D:\\Maker\\Console\\mingw64\\x86_64-w64-mingw32\\include",
+                "D:\\Maker\\keil5\\ARM\\ARMCC\\include",
+                "D:\\Maker\\keil5\\C51\\INC",
+                ".\\",
+                ".\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Source\\Templates",
+                ".\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
+                ".\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Source",
+                ".\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx",
+                ".\\Drivers\\CMSIS\\Device\\ST",
+                ".\\Drivers\\CMSIS\\Include",
+                ".\\Core\\Inc",
+                ".\\Core",
+
+                ".\\Drivers\\STM32F1xx_HAL_Driver\\Inc\\Legacy",
+                ".\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
+                ".\\Drivers\\STM32F1xx_HAL_Driver\\Src",
+                ".\\Drivers\\CMSIS",
+                ".\\Drivers\\STM32F1xx_HAL_Driver",
+                ".\\MDK-ARM\\DebugConfig",
+                ".\\MDK-ARM\\RTE",
+                ".\\.vscode",
+                ".\\Core",
+                ".\\Drivers",
+                ".\\MDK-ARM",
+                ""
+
+            ],
+            "defines": [
+                "USE_VSCODE",
+                "stm32"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "forcedInclude": [
+                ".\\.vscode\\mcu.h"
+            ]
+        }
+    ],
+    "version": 4
+}
