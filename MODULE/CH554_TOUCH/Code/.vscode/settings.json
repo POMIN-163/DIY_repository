@@ -1,0 +1,11 @@
+{
+    // "C_Cpp.intelliSenseEngine": "Disabled",
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.o": "plist",
+        "DEBUG.C": "cpp"
+    },
+    "files.encoding": "gb2312"
+}
