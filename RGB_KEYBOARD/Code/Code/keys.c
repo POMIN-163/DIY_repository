@@ -8,7 +8,7 @@ HID报告描述符参考文章：https://www.cnblogs.com/AlwaysOnLines/p/4552840.html
 
 #include "./Public/CH552.H"
 #include "./Public/DEBUG.H"
-#include "key.h"
+#include "keys.h"
 #include <string.h>
 #include <stdio.h>
 

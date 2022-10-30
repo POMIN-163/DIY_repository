@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>目标 1</TargetName>
+      <TargetName>PROJ</TargetName>
       <ToolsetNumber>0x0</ToolsetNumber>
       <ToolsetName>MCS-51</ToolsetName>
       <uAC6>8</uAC6>
@@ -374,12 +374,12 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>源组 1</GroupName>
+          <GroupName>SRC</GroupName>
           <Files>
             <File>
-              <FileName>Key.C</FileName>
+              <FileName>Keys.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Code\Key.C</FilePath>
+              <FilePath>.\Code\Keys.c</FilePath>
             </File>
             <File>
               <FileName>main..c</FileName>

@@ -14,7 +14,7 @@
 #include "./Public/CH552.H"
 #include "./Public/DEBUG.H"
 #include "WS2812B.h"
-#include "key.h"
+#include "keys.h"
 
 #define HID_KEY_CTRL HIDKey[0]    // Ctrl Shift Alt 三个键
 #define HID_KEY_MAIN HIDKey[2]    // 主键盘
