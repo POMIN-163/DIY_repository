@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ARM Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/LEDDISP.elf",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "arm-none-eabi-gdb.exe",
+      "targetArchitecture": "arm",
+      "setupCommands": [
+        {
+          "description": "选择调试文件(.elf)到gdb",
+          "text": "file F:/project/LED_DISP/Code/build/LEDDISP.elf",
+          "ignoreFailures": false
+        },
+        {
+          "description": "连接GDB Server",
+          "text": "target remote localhost:3333",
+          "ignoreFailures": false
+        },
+        {
+          "description": "Reset MCU",
+          "text": "monitor reset",
+          "ignoreFailures": false
+        },
+        {
+          "description": "Halt",
+          "text": "monitor halt",
+          "ignoreFailures": false
+        },
+        {
+          "description": "下载代码到MCU",
+          "text": "load",
+          "ignoreFailures": false
+        }
+      ],
+      "preLaunchTask": "build & openocd"
+    }
+  ]
+}

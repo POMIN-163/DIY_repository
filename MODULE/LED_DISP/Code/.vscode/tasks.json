@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": ["git-bash"],
+      "args": [
+        "-c",
+        "echo build.... && make -j8 all"
+      ]
+    },
+    {
+      "label": "build & openocd",
+      "type": "shell",
+      "command": ["git-bash"],
+      "args": [
+        "-c",
+        "echo build.... && make -j8 all && echo debug.... && start Alacritty.exe --command openocd"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+[*.{c,cc,cxx,cpp,h,hpp,ino}]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = "utf-8"
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+
+
+# *             匹配任何字符串，路径分隔符 ( /)除外
+# **            匹配任意字符串
+# ?             匹配任何单个字符
+# [seq]         匹配seq中的任何单个字符
+# [!seq]        匹配任何不在seq中的单个字符
+# {s1,s2,s3}    匹配任何给定的字符串（用逗号分隔，可以嵌套）
+# {num1..num2}  匹配 num1 和 num2 之间的任何整数，其中 num1 和 num2 可以是正数或负数
+
+
+# indent_style：设置为“tab”或“space”以分别使用硬制表符或软制表符。这些值不区分大小写。
+# indent_size： 一个整数，定义用于每个缩进级别的列数和软制表符的宽度（如果支持）。如果这等于 "tab"，
+#               则indent_size将设置为选项卡大小，如果指定了 tab_width，则应为 tab_width，如果未指定tab_width ，则应为编辑器设置的选项卡大小。这些值不区分大小写。
+# tab_width：   一个整数，定义用于表示制表符的列数。这默认为indent_size的值，通常不需要指定。
+# end_of_line： 设置为“lf”、“cr”或“crlf”以控制换行符的表示方式。这些值不区分大小写。
+# charset：     设置为“latin1”、“utf-8”、“utf-8-bom”、“utf-16be”或“utf-16le”来控制字符集。不鼓励使用“utf-8-bom”。
+# root：        应在文件顶部的任何部分之外指定的特殊属性。设置为“true”以停止.editorconfig对当前文件的文件搜索。该值不区分大小写。
+# trim_trailing_whitespace： 设置为“true”以删除换行符之前的任何空白字符，设置为“false”以确保不删除。
+# insert_final_newline：     设置为“true”以确保文件在保存时以换行符结尾，“false”以确保它不会。
