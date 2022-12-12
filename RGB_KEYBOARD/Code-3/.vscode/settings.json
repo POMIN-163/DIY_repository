@@ -1,0 +1,33 @@
+{
+    "files.encoding": "gb2312",
+    // "C_Cpp.intelliSenseEngine": "Disabled",
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "*.o": "plist",
+        "DEBUG.C": "cpp",
+        "CH552.H": "cpp",
+        "DataFlash.C": "cpp",
+        "DEBUG.H": "cpp",
+        "keys.h": "c",
+        "touch.h": "c",
+        "string.h": "c",
+        "RGB.C": "cpp",
+        "RGB.H": "cpp",
+        "WS2812B.C": "cpp",
+        "Timer.H": "cpp",
+        "GPIO.C": "cpp",
+        "CH551.H": "cpp",
+        "xlocbuf": "cpp",
+        "codecvt": "cpp",
+        "xstring": "cpp",
+        "xlocale": "cpp",
+        "xlocinfo": "cpp",
+        "ostream": "cpp",
+        "common.h": "c",
+        "system_error": "c",
+        "keycode.h": "c",
+        "main.C": "cpp"
+    }
+}
