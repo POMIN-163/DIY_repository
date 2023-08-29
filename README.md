@@ -15,6 +15,8 @@
 
 - ### [SPACEMAN: 带有太空人动画的气象站小电视](./SPACEMAN)
 
+- ### [ESP32_DIAL: 用ESP32做的Surface dial](./ESP32_DIAL)
+
 - ### [ARM-LINKER: STM32核心板到DAP/ST-Link/Jlink的转接板](./ARM-LINKER)
 
 - ### [MODULE: DIY的一些电子小模块](./MODULE)
