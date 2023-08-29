@@ -77,6 +77,8 @@ void drv_usb_mul(uchar dat) {
         temp[2] = 0x02;
     else
         temp[2] = 0x00;
+    if (dat == KEY_SYS_REST)
+        temp[4] = KEY_SYS_REST;
     drv_usb_write_ep2(temp, 5);
 }
 

@@ -151,4 +151,8 @@
 #define KEY_Right_Alt              0x40
 #define KEY_Right_GUI              0x80
 
+#define KEY_SYS_POWEROFF 0x81  // ¹Ø»ú
+#define KEY_SYS_REST     0x82  // ÐÝÃß
+#define KEY_SYS_WAKE     0x83  // »½ÐÑ
+
 #endif

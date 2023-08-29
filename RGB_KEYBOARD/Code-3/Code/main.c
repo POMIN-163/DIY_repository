@@ -63,9 +63,9 @@ void key_scan(void) {
     /* EC11 响应 上升沿/下降沿全触发 抵消不灵敏的感觉 */
     if (!EC11_B_NOW_STA && EC11_B_BACK_STA) {
         if (IO_EC11_A) {
-            key_msg = 21;  // 顺时针
+            key_msg = 22;  // 顺时针
         } else {
-            key_msg = 22;  // 逆时针
+            key_msg = 21;  // 逆时针
         }
     }
     /* 普通按键扫描 */
@@ -89,13 +89,13 @@ void key_scan(void) {
 void key_act(void) {
     switch (key_msg) {
         case 1:
-            drv_usb_mul_click(HID_CONSUMER_SCAN_PREV_TRK);
-            break;
-        case 2:
             drv_usb_mul_click(HID_CONSUMER_PLAY_PAUSE);
             break;
-        case 3:
+        case 2:
             drv_usb_mul_click(HID_CONSUMER_SCAN_NEXT_TRK);
+            break;
+        case 3:
+            drv_usb_mul_click(KEY_SYS_REST);
             break;
         case 4:
             break;

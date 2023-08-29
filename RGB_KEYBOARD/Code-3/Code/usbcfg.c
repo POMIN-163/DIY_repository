@@ -80,8 +80,16 @@ char code desc_report[] = {
     0x15, 0x00,        // LOGICAL_MINIMUM (0)
     0x26, 0x3c, 0x03,  // LOGICAL_MAXIMUM (828)
     0x95, 0x01,        // REPORT_COUNT (1)
-    0x75, 0x10,        // REPORT_SIZE (16)
+    0x75, 0x18,        // REPORT_SIZE (24)
     0x81, 0x00,        // INPUT (Data,Ary,Abs)
+    0x05, 0x01,        // USAGE_PAGE 用途页0x01(普通桌面)
+    0x19, 0x00,        // USAGE_MINIMUM 用途最小值0x00(未定义)
+    0x29, 0x83,        // USAGE_MAXIMUM 用途最大值0x83(系统唤醒)
+    0x15, 0x00,        // LOGICAL_MINIMUM (0)
+    0x25, 0x83,        // LOGICAL_MAXIMUM (83)
+    0x75, 0x08,        // REPORT_SIZE (8)
+    0x95, 0x01,        // REPORT_COUNT (1)
+    0x81, 0x00,        // INPUT (Data,Ary,Abs)输入1字节数据    
     0xc0,              // END_COLLECTION  /* 25 */
 
     /* dial */
